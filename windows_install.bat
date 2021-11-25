@@ -6,6 +6,7 @@ cd /d "%currdir%"
 set installpath=C:\mongodb
 
 call mongodb-download-windows.bat
+call database-tools-download-windows.bat
 
 robocopy mongodb %installpath% /E
 
@@ -19,6 +20,11 @@ copy /Y "%currdir%\mongodb.config" %installpath%
 mkdir C:\mongodb\log
 mkdir C:\mongodb\data
 mkdir C:\mongodb\data\db
+
+xcopy /Y /E database-tools\bin\* %installpath%\bin
+copy /Y database-tools\LICENSE.md %installpath%\database-tools-LICENSE.md
+copy /Y database-tools\README.md %installpath%\database-tools-README.md
+copy /Y database-tools\THIRD-PARTY-NOTICES %installpath%\database-tools-THIRD-PARTY-NOTICES
 
 call windows_service_create.bat
 call firewall_rule_add.bat
