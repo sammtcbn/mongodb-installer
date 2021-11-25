@@ -5,8 +5,7 @@ cd /d "%currdir%"
 
 set installpath=C:\mongodb
 
-call firewall_rule_del.bat
-call windows_service_delete.bat
+call windows_stop_public.bat
 
 cd C:\
 

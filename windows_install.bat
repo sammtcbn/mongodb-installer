@@ -12,12 +12,13 @@ mongodb\bin\vcredist_x64.exe /install /norestart /qn /passive
 
 robocopy mongodb %installpath% /E
 
-copy /Y "%currdir%\windows_service_create.bat" %installpath%
-copy /Y "%currdir%\windows_service_delete.bat" %installpath%
+copy /Y "%currdir%\windows_start.bat" %installpath%
+copy /Y "%currdir%\windows_start_public.bat" %installpath%
+copy /Y "%currdir%\windows_stop.bat" %installpath%
+copy /Y "%currdir%\windows_stop_public.bat" %installpath%
 copy /Y "%currdir%\windows_uninstall.bat" %installpath%
-copy /Y "%currdir%\firewall_rule_add.bat" %installpath%
-copy /Y "%currdir%\firewall_rule_del.bat" %installpath%
 copy /Y "%currdir%\mongodb.config" %installpath%
+copy /Y "%currdir%\mongodb_public.config" %installpath%
 
 mkdir C:\mongodb\log
 mkdir C:\mongodb\data
@@ -28,8 +29,6 @@ copy /Y database-tools\LICENSE.md %installpath%\database-tools-LICENSE.md
 copy /Y database-tools\README.md %installpath%\database-tools-README.md
 copy /Y database-tools\THIRD-PARTY-NOTICES %installpath%\database-tools-THIRD-PARTY-NOTICES
 
-call windows_service_create.bat
-call firewall_rule_add.bat
 
 :END
 echo bye
