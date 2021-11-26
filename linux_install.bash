@@ -7,6 +7,8 @@ if [ "$EUID" -ne 0 ]; then
     exit
 fi
 
+./mongodb-download-ubuntu2004-x64.sh || exit 1
+
 mkdir -p ${INS_PATH} || exit 1
 cp -a -r -f mongodb/* ${INS_PATH} || exit 1
 cp -a -f ${SERVICE_NAME} /etc/systemd/system || exit 1
