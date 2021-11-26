@@ -1,0 +1,15 @@
+[Unit]
+Description=MongoDB Service
+After=network.target systemd-sysctl.service systemd-modules-load.service
+
+[Service]
+User=root
+WorkingDirectory=/usr/local/sammtcbn/mongodb
+Restart=no
+Type=simple
+ExecStart=/usr/local/sammtcbn/mongodb/bin/mongod --dbpath /usr/local/sammtcbn/mongodb/data/db
+RemainAfterExit=true
+StandardOutput=null
+
+[Install]
+WantedBy=multi-user.target
