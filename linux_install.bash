@@ -13,6 +13,8 @@ cp -a -f ${SERVICE_NAME} /etc/systemd/system || exit 1
 
 mkdir -p ${INS_PATH}/data/db || exit 1
 
+cp -a -f linux_uninstall.bash ${INS_PATH}/uninstall.bash || exit 1
+
 systemctl daemon-reload || exit 1
 chmod 664 /etc/systemd/system/${SERVICE_NAME} || exit 1
 systemctl enable ${SERVICE_NAME} || exit 1
