@@ -8,7 +8,7 @@ set installpath=C:\mongodb
 call mongodb-download-windows.bat
 call database-tools-download-windows.bat
 
-mongodb\bin\vcredist_x64.exe /install /norestart /qn /passive
+mongodb\bin\vc_redist.x64.exe /install /norestart /qn /passive
 
 robocopy mongodb %installpath% /E
 

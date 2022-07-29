@@ -3,7 +3,7 @@ set currdir=%~dp0
 IF "%currdir:~-1%"=="\" SET currdir=%currdir:~0,-1%
 cd /d "%currdir%"
 
-set dlver=5.0.4
+set dlver=6.0.0
 set dlfile=mongodb-windows-x86_64-%dlver%.zip
 set dlurl=https://fastdl.mongodb.org/windows/%dlfile%
 set foldername=mongodb-win32-x86_64-windows-%dlver%
@@ -23,7 +23,7 @@ if not exist %dlfile% (
 
 powershell -command "Expand-Archive -Force %dlfile% ."
 
-if not exist %foldername%\bin\mongo.exe (
+if not exist %foldername%\bin\mongod.exe (
     echo Fail to extract %dlfile%
     pause
     goto End
