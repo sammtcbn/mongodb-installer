@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dlver=6.0.0
+dlver=6.0.5
 dlfile=mongodb-linux-x86_64-ubuntu2004-${dlver}.tgz
 dlurl=https://fastdl.mongodb.org/linux/${dlfile}
 foldername=mongodb-linux-x86_64-ubuntu2004-${dlver}
